@@ -1,0 +1,48 @@
+<h2>Edit Item</h2>
+
+<p>Fill in the following:</p>
+
+<form action="/products/<%= @product[:id] %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <div class="form_group">
+    <label>Name
+      <input type="text" name="product[name]" value="<%= @product[:name] %>">
+    </label>
+  </div>
+
+  <div class="form_group">
+    <label>Price
+      <input type="text" name="product[price]" value="<%= @product[:price] %>">
+    </label>
+  </div>
+
+  <div class="form_group">
+    <label>Photo URL
+      <input type="text" name="product[photo]" value="<%= @product[:photo] %>">
+    </label>
+  </div>
+
+  <div class="form_group">
+    <label>Brand
+      <input type="text" name="product[brand]" value="<%= @product[:brand] %>">
+    </label>
+  </div>
+
+  <div class="form_group">
+    <label>Category
+      <input type="text" name="product[category]" value="<%= @product[:category] %>">
+    </label>
+  </div>
+
+  <div class="form_group">
+    <label>Quantity
+      <input type="text" name="product[quantity]" value="<%= @product[:quantity] %>">
+    </label>
+  </div>
+
+  <div class="form_group">
+    <input type="submit" value="Submit">
+  </div>
+
+
+</form>

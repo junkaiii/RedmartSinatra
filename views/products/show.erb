@@ -1,0 +1,10 @@
+<h3><%= @product[:name] %></h3>
+<h4>Brand: <%= @product[:brand] %> Category: <%= @product[:category] %> </h4>
+<img src="<%= @product[:photo] %>" alt="" />
+<p><%= @product[:price] %></p>
+
+<!-- DELETE PRODUCT  -->
+<form action="/products/<%= @product[:id] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
