@@ -1,0 +1,41 @@
+<h2>Edit your details:</h2>
+
+<p>Edit your details below:</p>
+
+<form action="/users/<%= @user[:id] %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <div class="form_group">
+        <label>Name
+            <input type="text" name="user[name]" value="<%= @user[:name] %>">
+        </label>
+    </div>
+
+    <div class="form_group">
+        <label>Email
+            <input type="text" name="user[email]" value="<%= @user[:email] %>">
+        </label>
+    </div>
+
+    <div class="form_group">
+        <label>Address
+            <input type="text" name="user[address]" value="<%= @user[:address] %>">
+        </label>
+    </div>
+
+    <div class="form_group">
+        <label>Password
+            <input type="password" name="user[password]" value="">
+        </label>
+    </div>
+
+    <div class="form_group">
+        <label>Credit Card Number
+            <input type="text" name="user[cc_number]" value="<%= @user[:email] %>">
+        </label>
+    </div>
+
+    <div class="form_group">
+        <input type="submit" value="Submit">
+    </div>
+
+</form>
