@@ -1,8 +1,11 @@
 class RedmartUsersApp < Sinatra::Base
+
+#INDEX
   get '/' do
     erb :home
   end
 
+#USERS
   get '/users' do
     @users = User.all.order('id')
     erb :'users/index'
@@ -15,6 +18,12 @@ class RedmartUsersApp < Sinatra::Base
   get '/users/:id/edit' do
     @user = User.find(params[:id])
     erb :'users/edit'
+  end
+
+#PRODUCTS
+  get '/products' do
+    @products = Product.all.order('id')
+    erb :'products/index'
   end
 
   post '/users' do
@@ -42,5 +51,4 @@ class RedmartUsersApp < Sinatra::Base
       erb :"artists/ #{@deleted_artist.id}"
     end
   end
-
 end

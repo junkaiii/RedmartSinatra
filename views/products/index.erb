@@ -1,0 +1,57 @@
+<h2>Products we carry:</h2>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<table>
+<tr>
+  <th>Brand</th>
+  <th>Name</th>
+  <th>Photo</th>
+  <th>Price</th>
+  <th>Category</th>
+  <th>Edit Item</th>
+  <th>Delete Item</th>
+
+</tr>
+<% @products.each do |product| %>
+<tr>
+  <td>
+    <%= product[:'brand'] %>
+  </td>
+  <td>
+    <%= product[:'name'] %>
+  </td>
+  <td>
+    <img src="<%= product[:'photo'] %>" alt="" />
+  </td>
+  <td>
+    <%= product[:'price'] %>
+  </td>
+  <td>
+    <%= product[:'category'] %>
+  </td>
+
+  <td>
+    <form action="/products/<%= product[:id] %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="delete">
+    </form>
+  </td>
+  <td><a href="/products/<%= product[:id] %>/edit">Edit</a></td>
+</tr>
+<% end %>
+</table>
+<h3><a href="/products/new">Add Item</a></h3>
