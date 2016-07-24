@@ -29,19 +29,19 @@ tr:nth-child(even) {
 <% @products.each do |product| %>
 <tr>
   <td>
-    <%= product[:'brand'] %>
+    <a href="/products/<%= product[:id] %>"><%= product[:'brand'] %></a>
   </td>
   <td>
-    <%= product[:'name'] %>
+    <a href="/products/<%= product[:id] %>"><%= product[:'name'] %></a>
   </td>
   <td>
-    <img src="<%= product[:'photo'] %>" alt="" />
+    <a href="/products/<%= product[:id] %>"><img src="<%= product[:'photo'] %>" alt="" /></a>
   </td>
   <td>
-    <%= product[:'price'] %>
+    <a href="/products/<%= product[:id] %>"><%= product[:'price'] %></a>
   </td>
   <td>
-    <%= product[:'category'] %>
+    <a href="/products/<%= product[:id] %>"><%= product[:'category'] %></a>
   </td>
 
   <td>
